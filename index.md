@@ -4,7 +4,9 @@ layout: default
 
 Text can be **bold**, _italic_, or ~~strikethrough~~.
 
-[Link to another page](./pages/project-1.md).
+# Projects
+
+## [Building a home SOC with Microsoft Azure](./pages/project-1.md).
 
 There should be whitespace between paragraphs.
 
