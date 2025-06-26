@@ -17,4 +17,7 @@ To configure Microsoft Sentinel to collect event data from my VM, I had to add a
 
 ![query](../images/log-query)
 I created this query to not only filter for successful events, such as a successful logon, but to filter out any unnecessary noise, like the system logs. Since I have not yet logged on to the VM, the query yielded no results. All that was left to do after this was to add this to an alert rule on Sentinel and have it periodically check and add to an incident when it detects anything that corresponds with the query. 
+
 ![query](../images/rdp-logon) ![query](../images/sentinel-alert)
+
+As expected, when I log in with RDP on my local machine, it generates an incident alert on Sentinel. 
