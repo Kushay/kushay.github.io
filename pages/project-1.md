@@ -6,7 +6,7 @@ layout: default
 
 * * * 
 
-### Creating a VM and integrating Microsoft Sentinel to monitor for RDP sign ins
+### Creating a VM and integrating Microsoft Sentinel to build a simple RDP honeypot 
 ![new VM with RDP](../images/new-vm-with-rdp)
 
 Since I'm eventually going to try to set up Active Directory, I decided to make a Windows 10 VM with RDP open to test the SIEM I'll be setting up.
@@ -21,3 +21,6 @@ I created this query to not only filter for successful events, such as a success
 ![query](../images/rdp-logon) ![query](../images/sentinel-alert)
 
 As expected, when I log in with RDP on my local machine, it generates an incident alert on Sentinel. 
+
+### Creating a threat intelligence feed 
+To pull in threat intelligence without relying on already existing Microsoft tools, I had to add another data connector to Sentinel, which was MISP, an open-source threat intelligence platform.  
