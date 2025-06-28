@@ -23,4 +23,9 @@ I created this query to not only filter for successful events, such as a success
 As expected, when I log in with RDP on my local machine, it generates an incident alert on Sentinel. 
 
 ### Creating a threat intelligence feed 
-To pull in threat intelligence without relying on already existing Microsoft tools, I had to add another data connector to Sentinel, which was MISP, an open-source threat intelligence platform.  
+To pull in threat intelligence without relying on already existing Microsoft tools, I had to add another data connector to Sentinel, which was MISP, an open-source threat intelligence platform. To download the MISP feed, I needed to create a new Ubuntu VM so that I could use the command line and Docker to install MISP. After connecting to the VM via SSH through Azure CLI, I downloaded Docker as well as the Docker image of MISP. 
+![github-clone](../images/github-clone.png) ![pull](../images/MISP-docker-pull.png)
+
+I cloned the Docker image from GitHub, then followed the documentation to host the MISP web interface. Even after following the directions and opening up inbound connections to the VM to port 443 for HTTPS using the public IP of the Ubuntu VM (which is where the web interface is), I wasn't able to connect from my local computer. After HOURS of troubleshooting, I was finally able to debug it by removing a bad dhparams.pem file (upon research, it's what allows two parties to agree on an encryption key) and manually creating a new one. 
+
+![web_interface](../images/MISP-web.png)
