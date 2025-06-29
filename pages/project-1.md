@@ -39,4 +39,4 @@ Now, all that was left to do was enable all those feeds, and it was successfully
 After that, I logged into Azure in VS Code, which allowed me to deploy the code straight into the function app I created. Then I ran into even more problems and spent hours debugging and making sure variables were set to the correct values that referred to the MISP API keys, workspace IDs, etc. The final debug was for me to actually downgrade Python versions and edit the requirement.txt to run the code, thanks to ChatGPT. After that, the console said everything was all good, and all that was left for me to do was wait a few hours to see if logs and indicators were being pulled in. 
 
 
-![success](../images/console_success.png)
+![success](../images/console-success.png)
