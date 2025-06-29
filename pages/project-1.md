@@ -29,3 +29,4 @@ To pull in threat intelligence without relying on already existing Microsoft too
 I cloned the Docker image from GitHub, then followed the documentation to host the MISP web interface. Even after following the directions and opening up inbound connections to the VM to port 443 for HTTPS using the public IP of the Ubuntu VM (which is where the web interface is), I wasn't able to connect from my local computer. After HOURS of troubleshooting, I was finally able to debug it by removing a bad dhparams.pem file (upon research, it's what allows two parties to agree on an encryption key) and manually creating a new one. 
 
 ![web_interface](../images/MISP-web.png)
+Since this was publicly facing, I had to change the password. The next step was to pull in feeds for MISP, so I went to the MISP website for the default feeds in JSON format and pasted the entire thing into the MISP feeds. 
