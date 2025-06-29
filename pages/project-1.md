@@ -33,3 +33,10 @@ Since this was publicly facing, I had to change the password. The next step was 
 ![json_feed](../images/json.png)
 
 Now, all that was left to do was enable all those feeds, and it was successfully pulling threat indicators from the VM. The next thing I need to do is feed those into Microsoft Sentinel via the data connector. This integration was really rigorous, and following an online tutorial, I had to make a new app registration, create a new "client secret" under that, make a new contributor role under my log analytics workspace, which was made for Sentinel, all of which helps integrate MISP. The final step was to make a function app, which will run the Python code that's needed to send the indicators to Sentinel. The video told me to make a few changes to the code, which consisted of changing variable names and deleting certain functions that conflicted. 
+
+![deploy](../images/deploying-app.png)
+
+After that, I logged into Azure in VS Code, which allowed me to deploy the code straight into the function app I created. Then I ran into even more problems and spent hours debugging and making sure variables were set to the correct values that referred to the MISP API keys, workspace IDs, etc. The final debug was for me to actually downgrade Python versions and edit the requirement.txt to run the code, thanks to ChatGPT. After that, the console said everything was all good, and all that was left for me to do was wait a few hours to see if logs and indicators were being pulled in. 
+
+
+![success](../images/console_success.png)
