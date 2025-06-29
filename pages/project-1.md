@@ -30,3 +30,6 @@ I cloned the Docker image from GitHub, then followed the documentation to host t
 
 ![web_interface](../images/MISP-web.png)
 Since this was publicly facing, I had to change the password. The next step was to pull in feeds for MISP, so I went to the MISP website for the default feeds in JSON format and pasted the entire thing into the MISP feeds. 
+![json_feed](../images/json.png)
+
+Now, all that was left to do was enable all those feeds, and it was successfully pulling threat indicators from the VM. The next thing I need to do is feed those into Microsoft Sentinel via the data connector. This integration was really rigorous, and following an online tutorial, I had to make a new app registration, create a new "client secret" under that, make a new contributor role under my log analytics workspace, which was made for Sentinel, all of which helps integrate MISP. The final step was to make a function app, which will run the Python code that's needed to send the indicators to Sentinel. The video told me to make a few changes to the code, which consisted of changing variable names and deleting certain functions that conflicted. 
