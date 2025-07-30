@@ -40,3 +40,7 @@ After that, I logged into Azure in VS Code, which allowed me to deploy the code 
 
 
 ![success](../images/console-success.png)
+
+Finally, the misp2sentinel data connector in Sentinel was finally online and connected. So now I looked through the logs that MISP has been generating and learned about the fields that it contained such as ConfidenceScore and NetworkIP. To wrap the project up, I made a rule to monitor any event with a confidence score of 100 and any malicious IP known by MISP. 
+
+![MISP-query](../images/misp-query.png)
